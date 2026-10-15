@@ -4,7 +4,7 @@ const specialOperators=['%','=','+','-','/','*']
 let outPut=''
 const calculate=(btnValue)=>{
   if(btnValue==='='&&outPut!==''){
-    displayOutput=eval(outPut.replace('%','/100'))
+    output=eval(outPut.replace('%','/100'))
   }else if(btnValue==='AC'){
     outPut=''
   }else if(btnValue==='DEL'){
