@@ -2,7 +2,7 @@ const display=document.querySelector('.display')
 const buttons=document.querySelectorAll('button')
 const specialOperators=['%','=','+','-','/','*']
 let outPut=''
-const calulate=(btnValue)=>{
+const calculate=(btnValue)=>{
   if(btnValue==='='&&outPut!==''){
     displayOutput=eval(outPut.replace('%','/100'))
   }else if(btnValue==='AC'){
@@ -13,8 +13,8 @@ const calulate=(btnValue)=>{
     if(outPut===''&&specialOperators.includes(btnValue))return
     outPut+=btnValue
   }
-  display.value=outPut
+  displayOutput.value=outPut
 }
 buttons.forEach(button=>{
-  button.addEventListener('click',(e)=>calulate(e.target.dataset.value))
+  button.addEventListener('click',(e)=>calculate(e.target.dataset.value))
 })
