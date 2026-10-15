@@ -12,7 +12,7 @@ body{
   background:#0f1120;
 }
 .container {
-  max-widt:600px
+  max-width:600px;
   background:#fff;
   padding:10px;
   border-radius:12px;
