@@ -1,21 +1,20 @@
-const displayOutput = document.querySelector ('.display')
-const buttons = document.querySelectorAll ('button')
-conts specialOperators = ['%','=','+','-','/','*']
-let outPut= ' '
-const calculator = (btnValue) => {
-  if(btnValue === '=' && output!== ''){
-    output= eval(output.replace ('%','/100'))
-  }else if (btnValue==='AC'){
-    output=''
-  }else if (btnValue=== 'DEL') {
-    output= output.toString().slice (0,-1)
+const display=document.querySelector('.display')
+const buttons=document.querySelectorAll('button')
+const specialOperators=['%','=','+','-','/','*']
+let outPut=''
+const calulate=(btnValue)=>{
+  if(btnValue==='='&&outPut!==''){
+    displayOutput=eval(outPut.replace('%','/100'))
+  }else if(btnValue==='AC'){
+    outPut=''
+  }else if(btnValue==='DEL'){
+    outPut=outPut.toString().slice(0,-1)
   }else{
-    if (output=== ''&& specialOperators.include(btnValue))return 
-  output+= btnValue
+    if(outPut===''&&specialOperators.includes(btnValue))return
+    outPut+=btnValue
   }
-  displayOutput.value=output
-  }
-  buttons.forEach (button => {
-    button.addEventListener('clikc',(e) => calculate (e.target.dataset.value)
-    )
-  })
+  display.value=outPut
+}
+buttons.forEach(button=>{
+  button.addEventListener('click',(e)=>calulate(e.target.dataset.value))
+})
